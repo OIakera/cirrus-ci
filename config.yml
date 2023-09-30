@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 env:
-     token: ENCRYPTED[59f743be00fbe82038f9a18bef31f3ac69ae41083ed8b6a4fcdb8d1487e3b3b91c62ac9976eafa02a55e23886b26e690]
+    token: "ENCRYPTED[59f743be00fbe82038f9a18bef31f3ac69ae41083ed8b6a4fcdb8d1487e3b3b91c62ac9976eafa02a55e23886b26e690]"  
 
-# Clone kernel
-git clone --depth=1 https://github.com/reallyakera/stock-munch -b munch-s-oss kernel
+task:
+  name: "Kernel-Builder"
+  timeout_in: 2h
+  container:
+      image: ghcr.io/neutron-toolchains/docker-image:arch-neutron
+      cpu: 8
+      memory: 32G
 
-# Build
-cd kernel
-bash munch.sh --clang --ksu --lto
+  Build_script:
+      - bash setup.sh
