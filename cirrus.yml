@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 env:
     token: "ENCRYPTED[59f743be00fbe82038f9a18bef31f3ac69ae41083ed8b6a4fcdb8d1487e3b3b91c62ac9976eafa02a55e23886b26e690]"  
 
